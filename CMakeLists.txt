@@ -145,7 +145,9 @@ include_directories(
 ## Declare a C++ executable
 add_executable(
     subscriber_android_sensors_node
+    src/ros_boost_serialize_sensors.cpp
     src/subscriber_android_sensors.cpp
+    src/ros_sensor_to_file.cpp
 )
 
 ## Add cmake target dependencies of the executable
