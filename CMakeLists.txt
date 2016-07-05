@@ -19,6 +19,7 @@ find_package(catkin REQUIRED COMPONENTS
   android_core
   roscpp
   rospy
+  subscriber_to_file
 )
 
 ## System dependencies are found with CMake's conventions
@@ -27,11 +28,6 @@ find_package(
     REQUIRED COMPONENTS system serialization
 )
 
-
-## Uncomment this if the package has a setup.py. This macro ensures
-## modules and global scripts declared therein get installed
-## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
-# catkin_python_setup()
 
 ################################################
 ## Declare ROS messages, services and actions ##
@@ -131,29 +127,23 @@ include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
 )
-
-## Declare a C++ library
-# add_library(subscriber_android_sensors
-#   src/${PROJECT_NAME}/subscriber_android_sensors.cpp
-# )
-
-## Add cmake target dependencies of the library
-## as an example, code may need to be generated before libraries
-## either from message generation or dynamic reconfigure
-# add_dependencies(subscriber_android_sensors ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+#
+include_directories(
+    ${roscpp_INCLUDE_DIRS}
+)
+MESSAGE(${subscriber_to_file_INCLUDE_DIRS})
 
 ## Declare a C++ executable
 add_executable(
     subscriber_android_sensors_node
-    src/ros_boost_serialize_sensors.cpp
     src/subscriber_android_sensors.cpp
+    src/ros_boost_serialize_sensors.cpp
     src/ros_sensor_to_file.cpp
 )
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 add_dependencies(
-    subscriber_android_sensors_node
     ${${PROJECT_NAME}_EXPORTED_TARGETS}
     ${catkin_EXPORTED_TARGETS}
 )

@@ -15,7 +15,7 @@
 	  <param name="prefix" value="$(arg dir_export_sensors)" />
 	  <param name="binary" value="false" />
 	  <param name="xml" value="true" />
-	  <param name="sensors_topic" value="/android/imu" />
+          <param name="sensors_topic" value="/android/imu" />
   </node>    
 
 </launch>
