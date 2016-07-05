@@ -44,9 +44,11 @@
   <build_depend>roscpp</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>subscriber_to_file</build_depend>
+  <build_depend>ros_boost_serialize</build_depend>
   <run_depend>android_core</run_depend>
   <run_depend>roscpp</run_depend>
   <run_depend>rospy</run_depend>
+  <run_depend>ros_boost_serialize</run_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

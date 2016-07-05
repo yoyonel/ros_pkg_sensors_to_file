@@ -20,6 +20,7 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   subscriber_to_file
+  ros_boost_serialize
 )
 
 ## System dependencies are found with CMake's conventions
@@ -111,7 +112,7 @@ find_package(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
   INCLUDE_DIRS include
-  LIBRARIES subscriber_android_sensors
+  LIBRARIES subscriber_android_sensors ros_boost_serialize
   CATKIN_DEPENDS android_core roscpp rospy
   DEPENDS system_lib
 )
@@ -131,14 +132,11 @@ include_directories(
 include_directories(
     ${roscpp_INCLUDE_DIRS}
 )
-MESSAGE(${subscriber_to_file_INCLUDE_DIRS})
 
 ## Declare a C++ executable
-add_executable(
-    subscriber_android_sensors_node
-    src/subscriber_android_sensors.cpp
-    src/ros_boost_serialize_sensors.cpp
-    src/ros_sensor_to_file.cpp
+add_executable( subscriber_android_sensors_node
+    src/node.cpp
+    src/lib/sensortofile.cpp
 )
 
 ## Add cmake target dependencies of the executable
