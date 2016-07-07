@@ -129,9 +129,9 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 #
-include_directories(
-    ${roscpp_INCLUDE_DIRS}
-)
+#include_directories(
+#    ${roscpp_INCLUDE_DIRS}
+#)
 
 ## Declare a C++ executable
 add_executable( subscriber_android_sensors_node
