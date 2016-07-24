@@ -123,20 +123,15 @@ catkin_package(
 
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
-include_directories(include)
-#
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  include
 )
-#
-#include_directories(
-#    ${roscpp_INCLUDE_DIRS}
-#)
 
 ## Declare a C++ executable
 add_executable( subscriber_android_sensors_node
     src/node.cpp
-    src/lib/sensortofile.cpp
+    src/sensortofile.cpp
 )
 
 ## Add cmake target dependencies of the executable

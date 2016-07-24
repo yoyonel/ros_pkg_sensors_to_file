@@ -1,7 +1,9 @@
 #ifndef ROS_BOOST_SERIALIZE_SENSORS_H
 #define ROS_BOOST_SERIALIZE_SENSORS_H
 
-#include "ros_boost_serialize.h"
+//#include "ros_boost_serialize.h"
+#include "ros_boost_serialize/ros_boost_serialize.h"
+
 #include <boost/date_time/posix_time/time_serialize.hpp>
 
 namespace ros_boost_serialize {
@@ -71,6 +73,12 @@ private:
     linear_acceleration_imu_serialize_type linear_velocity;
     stamp_imu_serialize_type stamp_imu;
 };
+
+//std::ostream & operator<<(std::ostream &os, const _sensor_msgs_serialize_type &msg_)
+//{
+//    // ostream of ROS msg
+//    return os << *(msg_.msg());
+//}
 
 }
 }

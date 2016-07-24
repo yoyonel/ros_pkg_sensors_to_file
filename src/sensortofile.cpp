@@ -1,5 +1,5 @@
-#include "ros_sensor_to_file.h"
-
+//#include <ros_sensor_to_file.h>
+#include "../include/ros_sensor_to_file.h"  // pb avec QtCreator ...
 
 ////////////////////////////////////////////////////////////////////////////////
 SensorsToFile::SensorsToFile (ros::NodeHandle _priv_nh, const uint32_t& _size_buffer) :
