@@ -1,7 +1,7 @@
 // urls:
 // - http://www.boost.org/doc/libs/1_61_0/libs/serialization/doc/tutorial.html
 #include <ros/ros.h>
-#include "../include/node_sensor_to_file.h" // pb avec QtCreator ...
+#include <node_sensor_to_file.h>
 
 
 int main(int argc, char **argv)
